@@ -1,5 +1,6 @@
 %define _enable_debug_packages %{nil}
 %define debug_package %{nil}
+%define lib32dir /usr/lib
 
 Name:           pipelight
 License:        LGPL
@@ -60,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/doc/%{name}-multi
 %{_datadir}/man/man1/pipelight-plugin.1.xz
 %ifarch x86_64
-%{_lib32dir}/%{name}
+%{lib32dir}/%{name}
 %else
 %{_libdir}/%{name}
 %endif
