@@ -9,7 +9,7 @@ Release:        Stan8
 Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
 %ifarch x86_64
- %define rname %name-64
+ %define rname %name-x64
 %else
  %define rname %name
 %endif 
