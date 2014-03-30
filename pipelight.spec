@@ -36,9 +36,10 @@ cp -R usr $RPM_BUILD_ROOT
 
 
 # Source debconf library.
+ln -s /bin/id /usr/bin/id
 pipelight-plugin --update
 pipelight-plugin --create-mozilla-plugins
-ln -s /bin/id /usr/bin/id
+pipelight-plugin --enable silverlight
 
 %preun
 #!/bin/sh -e
