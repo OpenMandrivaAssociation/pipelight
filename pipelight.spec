@@ -39,7 +39,6 @@ cp -R usr $RPM_BUILD_ROOT
 ln -s /bin/id /usr/bin/id
 pipelight-plugin --update
 pipelight-plugin --create-mozilla-plugins
-pipelight-plugin --enable silverlight
 
 %preun
 #!/bin/sh -e
@@ -58,13 +57,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %{_bindir}/pipelight-plugin
 %{_datadir}/%{name}
+%{_datadir}/doc/%{name}-multi
+%{_datadir}/man/man1/pipelight-plugin.1.xz
 %ifarch x86_64
 %{_lib32dir}/%{name}
 %else
 %{_libdir}/%{name}
 %endif
-%{_datadir}/doc/%{name}-multi
-%{_datadir}/man/man1/pipelight-plugin.1.xz
+
 
 %changelog
 * Sun Mar 30 2014 Stan8 <stasiek0000@poczta.onet.pl> 0.2.5-Stan8
