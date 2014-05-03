@@ -14,11 +14,11 @@ URL:		http://fds-team.de/cms/index.html
 %else
  %define rname %name
 %endif 
-Source:         http://77.254.212.95/src/%rname-%version.tar.bz2
+Source:         http://77.254.151.253/src/%rname-%version.tar.bz2
 BuildRoot:      %{_tmppath}/%rname-%version-build
 Requires:	wine-compholio
 Requires:	firefox
-Requires:	firefox-ext-user_agent_overrider
+Requires:	webcore-fonts
 
 %description
 MS Silverlight alternative for linux
