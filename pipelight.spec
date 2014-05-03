@@ -18,7 +18,7 @@ Source:         http://77.254.151.253/src/%rname-%version.tar.bz2
 BuildRoot:      %{_tmppath}/%rname-%version-build
 Requires:	wine-compholio
 Requires:	firefox
-Requires:	webcore-fonts
+Suggests:	webcore-fonts
 
 %description
 MS Silverlight alternative for linux
