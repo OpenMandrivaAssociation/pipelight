@@ -6,7 +6,7 @@ Name:           pipelight
 License:        LGPL
 Group:          Networking/WWW
 Version:        0.2.6
-Release:        Stan8
+Release:        1
 Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
 %ifarch x86_64
@@ -67,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %changelog
+* Wed May 27 2014 kyndek <kyndek@gmail.com> 
+- prepared for Openmandriva 
+
 * Mon Apr 07 2014 Stan8 <stasiek0000@poczta.onet.pl> 0.2.6-Stan8
 - new version
 
