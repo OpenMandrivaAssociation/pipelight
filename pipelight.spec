@@ -14,6 +14,7 @@ URL:		http://fds-team.de/cms/index.html
 %else
  %define rname %name
 %endif 
+Source:         https://bitbucket.org/mmueller2012/pipelight/get/v%version.tar.bz2 
 Source:         http://77.254.151.253/src/%rname-%version.tar.bz2
 BuildRoot:      %{_tmppath}/%rname-%version-build
 Requires:	wine-compholio
