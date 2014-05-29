@@ -11,11 +11,11 @@ Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
 %ifarch x86_64
  %define rname %name-x64
+Source:         %rname-%version.tar.bz2
 %else
  %define rname %name
+Source1:         %rname-%version.tar.bz2
 %endif 
-Source:         https://bitbucket.org/mmueller2012/pipelight/get/v%version.tar.bz2 
-##Source:         http://77.254.151.253/src/%rname-%version.tar.bz2
 BuildRoot:      %{_tmppath}/%rname-%version-build
 Requires:	wine-compholio
 Requires:	firefox
@@ -25,7 +25,11 @@ Suggests:	webcore-fonts
 MS Silverlight alternative for linux
 
 %prep
-%setup -n %rname-%version
+%ifarch x86_64
+ %setup -T -a 1 -n %rname-%version
+%else
+ %setup -n %rname-%version
+%endif
 
 %build
 
@@ -69,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Wed May 27 2014 kyndek <kyndek@gmail.com> 
-- prepared for Openmandriva 
+- prepared for Openmandriva Lx 
 
 * Mon Apr 07 2014 Stan8 <stasiek0000@poczta.onet.pl> 0.2.6-Stan8
 - new version
