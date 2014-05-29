@@ -6,7 +6,7 @@ Name:           pipelight
 License:        LGPL
 Group:          Networking/WWW
 Version:        0.2.6
-Release:        2
+Release:        3
 Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
 Source:         %name-%version.tar.bz2
