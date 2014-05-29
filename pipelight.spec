@@ -12,7 +12,6 @@ URL:		http://fds-team.de/cms/index.html
 Source:         %name-%version.tar.bz2
 Source1:        %name-x64-%version.tar.bz2
 Source100:      pipelight.rpmlintrc
-BuildRoot:      %{_tmppath}/%name-%version-build
 Requires:	wine-compholio
 Requires:	firefox
 Suggests:	webcore-fonts
@@ -22,16 +21,16 @@ MS Silverlight alternative for linux
 
 %prep
 %ifarch x86_64
- %setup -T -a 1 -n %name-%version
+ %setup -T -a1 -qn %name-%version
 %else
- %setup -n %name-%version
+ %setup -qn %name-%version
 %endif
 
 %build
 
 
 %install
-cp -R usr $RPM_BUILD_ROOT
+cp -R usr %{buildroot}
 
 %post
 #!/bin/sh -e
@@ -53,9 +52,6 @@ if [ "$1" != "upgrade" ]; then
 	pipelight-plugin --disable-all
 fi
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
 %{_bindir}/pipelight-plugin
 %{_datadir}/%{name}
@@ -66,13 +62,3 @@ rm -rf $RPM_BUILD_ROOT
 %else
 %{_libdir}/%{name}
 %endif
-
-%changelog
-* Wed May 27 2014 kyndek <kyndek@gmail.com> 
-- prepared for Openmandriva Lx 
-
-* Mon Apr 07 2014 Stan8 <stasiek0000@poczta.onet.pl> 0.2.6-Stan8
-- new version
-
-* Sun Mar 30 2014 Stan8 <stasiek0000@poczta.onet.pl> 0.2.5-Stan8
-- first build
