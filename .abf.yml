@@ -1,3 +1,5 @@
-sources:
+removed_sources:
   pipelight-0.2.5.tar.bz2: fc6de7a200515a76b2b322697fcbf031d6bb32e4
+sources:
+  pipelight-0.2.6.tar.bz2: a38197079566904dabd51323e24532f1135cde6c
   pipelight-x64-0.2.6.tar.bz2: 6cfe74b3a40723c66d074dd66181001302e2e353
