@@ -23,7 +23,7 @@ Requires:	wine-compholio64
 Requires:	wine-compholio
 %endif
 Requires:	firefox
-Requires:	webcore-fonts
+Suggests:	webcore-fonts
 
 %description
 MS Silverlight alternative for linux
