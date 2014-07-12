@@ -5,29 +5,33 @@
 Name:           pipelight
 License:        LGPL
 Group:          Networking/WWW
-Version:        0.2.6
-Release:        4
+Version:        0.2.7.1
+Release:        1
 Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
-Source:         %name-%version.tar.bz2
-Source1:        %name-x64-%version.tar.bz2
+%ifarch x86_64
+%define rname %name-x64
+%else
+%define rname %name
+%endif 
+Source:         %rname-%version.tar.bz2
+BuildRoot:      %{_tmppath}/%rname-%version-build
 Source100:      pipelight.rpmlintrc
+%ifarch x86_64
+Requires:	wine-compholio64
+%else
 Requires:	wine-compholio
+%endif
 Requires:	firefox
-Suggests:	webcore-fonts
+Requires:	webcore-fonts
 
 %description
 MS Silverlight alternative for linux
 
 %prep
-%ifarch x86_64
- %setup -T -a1 -qn %{name}-x64-%{version}
-%else
- %setup -qn %{name}-%{version}
-%endif
+%setup -n %rname-%version
 
 %build
-
 
 %install
 cp -R usr %{buildroot}
