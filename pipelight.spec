@@ -23,7 +23,7 @@ Requires:	wine-compholio64
 Requires:	wine-compholio
 %endif
 Requires:	firefox
-Requires:   webcore-fonts
+Requires:	webcore-fonts
 Suggests:	firefox-ext-user_agent_overrider
 
 %description
