@@ -14,7 +14,8 @@ URL:		http://fds-team.de/cms/index.html
 %else
 %define rname %name
 %endif 
-Source:         %rname-%version.tar.bz2
+Source0:	pipelight-%{version}.tar.bz2
+Source1:	pipelight-x64-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%rname-%version-build
 Source100:      pipelight.rpmlintrc
 %ifarch x86_64
@@ -23,14 +24,18 @@ Requires:	wine-compholio64
 Requires:	wine-compholio
 %endif
 Requires:	firefox
-Requires:   webcore-fonts
+Requires:   	webcore-fonts
 Suggests:	firefox-ext-user_agent_overrider
 
 %description
 MS Silverlight alternative for linux
 
 %prep
-%setup -n %rname-%version
+%ifarch x86_64
+%setup -b 1 -n %rname-%version
+%else
+%setup -b 0 -n %rname-%version
+%endif
 
 %build
 
