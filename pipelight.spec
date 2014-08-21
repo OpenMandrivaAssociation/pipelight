@@ -5,8 +5,8 @@
 Name:           pipelight
 License:        LGPL
 Group:          Networking/WWW
-Version:        0.2.7.1
-Release:        3
+Version:        0.2.7.3
+Release:        1
 Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
 %ifarch x86_64
@@ -14,7 +14,8 @@ URL:		http://fds-team.de/cms/index.html
 %else
 %define rname %name
 %endif 
-Source:         %rname-%version.tar.bz2
+Source0:	pipelight-%{version}.tar.bz2
+Source1:	pipelight-x64-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%rname-%version-build
 Source100:      pipelight.rpmlintrc
 %ifarch x86_64
@@ -23,14 +24,18 @@ Requires:	wine-compholio64
 Requires:	wine-compholio
 %endif
 Requires:	firefox
-Suggests:	webcore-fonts
+Requires:   	webcore-fonts
 Suggests:	firefox-ext-user_agent_overrider
 
 %description
 MS Silverlight alternative for linux
 
 %prep
-%setup -n %rname-%version
+%ifarch x86_64
+%setup -T -b 1 -n %rname-%version
+%else
+%setup -T -b 0 -n %rname-%version
+%endif
 
 %build
 
@@ -42,7 +47,7 @@ cp -R usr %{buildroot}
 
 
 # Source debconf library.
-ln -s /bin/id /usr/bin/id
+ln -sf /bin/id /usr/bin/id
 pipelight-plugin --update
 pipelight-plugin --create-mozilla-plugins
 
@@ -60,7 +65,6 @@ fi
 %files
 %{_bindir}/pipelight-plugin
 %{_datadir}/%{name}
-%{_datadir}/doc/%{name}-multi
 %{_datadir}/man/man1/pipelight-plugin.1.xz
 %ifarch x86_64
 %{lib32dir}/%{name}
