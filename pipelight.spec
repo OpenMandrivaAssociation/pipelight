@@ -32,9 +32,9 @@ MS Silverlight alternative for linux
 
 %prep
 %ifarch x86_64
-%setup -b 1 -n %rname-%version
+%setup -T -b 1 -n %rname-%version
 %else
-%setup -b 0 -n %rname-%version
+%setup -T -b 0 -n %rname-%version
 %endif
 
 %build
