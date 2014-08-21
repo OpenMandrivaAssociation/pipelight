@@ -65,7 +65,6 @@ fi
 %files
 %{_bindir}/pipelight-plugin
 %{_datadir}/%{name}
-%{_datadir}/doc/%{name}-multi
 %{_datadir}/man/man1/pipelight-plugin.1.xz
 %ifarch x86_64
 %{lib32dir}/%{name}
