@@ -1,12 +1,12 @@
 removed_sources:
   pipelight-0.2.5.tar.bz2: fc6de7a200515a76b2b322697fcbf031d6bb32e4
   pipelight-0.2.6.tar.bz2: a38197079566904dabd51323e24532f1135cde6c
-  pipelight-0.2.7.1.tar.xz: e6bbbc3e2585120789b9666b261546d57021607c
+  pipelight-0.2.7.1.tar.xz: 53d37bedad43a4fa5b8301e2570316cff2a93c0f
   pipelight-0.2.7.3.tar.bz2: c694d1f81259669704b7d8638b47ca07450ab58b
   pipelight-x64-0.2.6.tar.bz2: 6cfe74b3a40723c66d074dd66181001302e2e353
   pipelight-x64-0.2.7.1.tar.bz2: 795e36d14054d3475a5b60dac35e31b82abb9080
-  pipelight-x64-0.2.7.1.tar.xz: d3e89ee9efd3d5b10eb0503abe4b7b66c875a12c
+  pipelight-x64-0.2.7.1.tar.xz: 37bab4be099faeea334b6b5949753db37a41e449
   pipelight-x64-0.2.7.3.tar.bz2: e9cdee63860ad57e719dca7e93660b6a2ccddda2
 sources:
-  pipelight-0.2.7.1.tar.xz: 53d37bedad43a4fa5b8301e2570316cff2a93c0f
-  pipelight-x64-0.2.7.1.tar.xz: 37bab4be099faeea334b6b5949753db37a41e449
+  pipelight-0.2.7.1.tar.xz: 2440a5f7e6b3cc69f5ef03d2d5c47afb29cf4910
+  pipelight-x64-0.2.7.1.tar.xz: cb3eab3dc820f3ba2dba189cba3650f26c09cf6d
