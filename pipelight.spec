@@ -5,9 +5,9 @@
 Name:           pipelight
 License:        LGPL
 Group:          Networking/WWW
-Version:        0.2.7.1
-Release:        3
-Epoch:			1
+Version:        0.2.8
+Release:        1
+Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://fds-team.de/cms/index.html
 %ifarch x86_64
@@ -66,7 +66,7 @@ fi
 %files
 %{_bindir}/pipelight-plugin
 %{_datadir}/%{name}
-%{_datadir}/man/man1/pipelight-plugin.1.xz
+%{_datadir}/man/man1/pipelight-plugin.1.gz
 %ifarch x86_64
 %{lib32dir}/%{name}
 %else
