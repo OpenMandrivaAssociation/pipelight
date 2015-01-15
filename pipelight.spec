@@ -5,7 +5,7 @@ Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
 Version:        0.2.8.1
-Release:        3
+Release:        4
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
