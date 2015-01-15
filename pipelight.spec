@@ -5,7 +5,7 @@ Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
 Version:        0.2.8.1
-Release:        2
+Release:        3
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
@@ -25,12 +25,8 @@ Requires:	wine64
 %endif
 Requires(post,preun):	gnupg
 Requires(post,preun):	wget
-
-%ifarch x86_64
 Conflicts:	wine-compholio64
-%else
 Conflicts:	wine-compholio
-%endif
 Suggests:	firefox-ext-user_agent_overrider
 
 %description
