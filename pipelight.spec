@@ -68,9 +68,9 @@ fi
 %prep
 %setup -c -T
 %ifarch x86_64
-tar -xf %{SOURCE0}
-%else
 tar -xf %{SOURCE1}
+%else
+tar -xf %{SOURCE0}
 %endif
 
 %build
