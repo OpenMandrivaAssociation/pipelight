@@ -1,11 +1,13 @@
 %define _enable_debug_packages %{nil}
 %define debug_package %{nil}
+%define lib32dir /usr/lib
+
 
 Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
 Version:        0.2.8.1
-Release:        2
+Release:        3
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
@@ -19,13 +21,12 @@ Requires:	pkgconfig(netapi)
 Requires:	webcore-fonts
 # Even 64 bit version uses 32 bit wine and some libraries for main plugins
 Requires:	libudev1
-Requires:	wine
+Requires:	wine32
 %ifarch x86_64
 Requires:	wine64
 %endif
 Requires(post,preun):	gnupg
 Requires(post,preun):	wget
-
 Suggests:	firefox-ext-user_agent_overrider
 
 %description
@@ -44,11 +45,16 @@ If something goes wrong run: pipelight-plugin --system-check
 %{_datadir}/%{name}
 %{_datadir}/doc/%{name}-multi
 %{_datadir}/man/man1/pipelight-plugin.1.xz
-%{_prefix}/lib/%{name}
+%ifarch x86_64
+%{lib32dir}/%{name}
+%else
+%{_libdir}/%{name}
+%endif
 
 %post
 #!/bin/sh -e
 ln -sf /bin/id /usr/bin/id
+mkdir -p /usr/lib/mozilla/plugins
 pipelight-plugin --update
 pipelight-plugin --remove-mozilla-plugins
 pipelight-plugin --create-mozilla-plugins
@@ -87,4 +93,3 @@ rm -f wine64
 ln -s %{_bindir}/wine64 wine64
 %endif
 popd
-
