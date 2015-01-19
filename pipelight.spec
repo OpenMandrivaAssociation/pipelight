@@ -7,7 +7,7 @@ Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
 Version:        0.2.8.1
-Release:        7
+Release:        8
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
@@ -21,7 +21,7 @@ Requires:	pkgconfig(netapi)
 Requires:	webcore-fonts
 # Even 64 bit version uses 32 bit wine and some libraries for main plugins
 Requires:	libudev1
-Requires:	wine32
+Requires:	wine
 %ifarch x86_64
 Requires:	wine64
 %endif
