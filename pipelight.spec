@@ -7,7 +7,7 @@ Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
 Version:        0.2.8.1
-Release:        6
+Release:        7
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
@@ -54,6 +54,7 @@ If something goes wrong run: pipelight-plugin --system-check
 %post
 #!/bin/sh -e
 ln -sf /bin/id /usr/bin/id
+mkdir -p /usr/lib/mozilla/plugins
 pipelight-plugin --update
 pipelight-plugin --remove-mozilla-plugins
 pipelight-plugin --create-mozilla-plugins
