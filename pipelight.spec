@@ -1,11 +1,13 @@
 %define _enable_debug_packages %{nil}
 %define debug_package %{nil}
+%define lib32dir /usr/lib
+
 
 Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
 Version:        0.2.8.1
-Release:        5
+Release:        6
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
@@ -43,7 +45,11 @@ If something goes wrong run: pipelight-plugin --system-check
 %{_datadir}/%{name}
 %{_datadir}/doc/%{name}-multi
 %{_datadir}/man/man1/pipelight-plugin.1.xz
-%{_prefix}/lib/%{name}
+%ifarch x86_64
+%{lib32dir}/%{name}
+%else
+%{_libdir}/%{name}
+%endif
 
 %post
 #!/bin/sh -e
