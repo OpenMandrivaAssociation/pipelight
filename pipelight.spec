@@ -6,14 +6,16 @@
 Name:           pipelight
 License:        LGPLv2.1+
 Group:          Networking/WWW
-Version:        0.2.8.1
-Release:        3
+Version:        0.2.8.2
+Release:        1
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
 URL:		http://pipelight.net
 Source0:	pipelight-%{version}.tar.bz2
 Source1:	pipelight-x64-%{version}.tar.bz2
 Source100:      pipelight.rpmlintrc
+Patch0:		pipelight-0.2.8.2-distro-version.patch
+Patch1:		pipelight-0.2.8.2-id-path.patch
 # Not auto-detected, likely used via dlopen
 Requires:	%{_lib}capi20_3
 # Used in library check
@@ -53,7 +55,6 @@ If something goes wrong run: pipelight-plugin --system-check
 
 %post
 #!/bin/sh -e
-ln -sf /bin/id /usr/bin/id
 mkdir -p /usr/lib/mozilla/plugins
 pipelight-plugin --update
 pipelight-plugin --remove-mozilla-plugins
@@ -77,7 +78,10 @@ tar -xf %{SOURCE1}
 %else
 tar -xf %{SOURCE0}
 %endif
-
+pushd %{name}-*
+%patch0 -p1
+%patch1 -p1
+popd
 %build
 
 %install

@@ -1,0 +1,52 @@
+diff -rupN pipelight-0.2.8.2-ori/usr/bin/pipelight-plugin pipelight-0.2.8.2/usr/bin/pipelight-plugin
+--- pipelight-0.2.8.2-ori/usr/bin/pipelight-plugin	2015-10-04 15:01:14.000000000 +0200
++++ pipelight-0.2.8.2/usr/bin/pipelight-plugin	2016-02-18 22:30:48.167202710 +0100
+@@ -93,7 +93,7 @@ get_directories()
+ 	PLUGIN_PATH=$(realpath "$PLUGIN_PATH")
+ 
+ 	# Global installation
+-	if [ $(/usr/bin/id -u) -eq 0 ]; then
++	if [ $(/bin/id -u) -eq 0 ]; then
+ 		INSTALLDIR="$PLUGIN_PATH"
+ 
+ 	# Use environment variable (only if it doesn't point to the global directory)
+@@ -421,7 +421,7 @@ check_system()
+ 	local retval=0
+ 
+ 	# Don't run this as root
+-	if [ $(/usr/bin/id -u) -eq 0 ]; then
++	if [ $(/bin/id -u) -eq 0 ]; then
+ 		echo "ERROR: You should not run this as root!" >&2
+ 		return 1
+ 	fi
+diff -rupN pipelight-0.2.8.2-ori/usr/share/pipelight/scripts/configure-flash pipelight-0.2.8.2/usr/share/pipelight/scripts/configure-flash
+--- pipelight-0.2.8.2-ori/usr/share/pipelight/scripts/configure-flash	2015-10-04 15:01:14.000000000 +0200
++++ pipelight-0.2.8.2/usr/share/pipelight/scripts/configure-flash	2016-02-18 22:31:29.386081462 +0100
+@@ -2,7 +2,7 @@
+ PIPELIGHT_SHARE_PATH="/usr/share/pipelight"
+ 
+ # Don't run this as root
+-if [ $(/usr/bin/id -u) -eq 0 ]; then
++if [ $(/bin/id -u) -eq 0 ]; then
+ 	echo "ERROR: You should not run this as root!" >&2
+ 	exit 1
+ fi
+diff -rupN pipelight-0.2.8.2-ori/usr/share/pipelight/scripts/configure-silverlight pipelight-0.2.8.2/usr/share/pipelight/scripts/configure-silverlight
+--- pipelight-0.2.8.2-ori/usr/share/pipelight/scripts/configure-silverlight	2015-10-04 15:01:14.000000000 +0200
++++ pipelight-0.2.8.2/usr/share/pipelight/scripts/configure-silverlight	2016-02-18 22:32:01.537206946 +0100
+@@ -2,7 +2,7 @@
+ PIPELIGHT_SHARE_PATH="/usr/share/pipelight"
+ 
+ # Don't run this as root
+-if [ $(/usr/bin/id -u) -eq 0 ]; then
++if [ $(/bin/id -u) -eq 0 ]; then
+ 	echo "ERROR: You should not run this as root!" >&2
+ 	exit 1
+ fi
+@@ -68,4 +68,4 @@ done
+ # Cleanup
+ rm "$tmpfile"
+ 
+-exit 0
+\ Brak znaku nowej linii na końcu pliku
++exit 0

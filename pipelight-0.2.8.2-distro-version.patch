@@ -1,0 +1,10 @@
+diff -rupN pipelight-0.2.8.2-ori/usr/bin/pipelight-plugin pipelight-0.2.8.2/usr/bin/pipelight-plugin
+--- pipelight-0.2.8.2-ori/usr/bin/pipelight-plugin	2015-10-04 15:01:14.000000000 +0200
++++ pipelight-0.2.8.2/usr/bin/pipelight-plugin	2016-02-18 22:41:26.736833889 +0100
+@@ -1,5 +1,5 @@
+ #!/bin/bash
+-VERSION="0.2.8.2~ubuntu15.04.1"
++VERSION="0.2.8.2~omv2014.2"
+ PIPELIGHT_SHARE_PATH="/usr/share/pipelight"
+ PIPELIGHT_LIBRARY_PATH="/usr/lib/pipelight"
+ PLUGIN_PATH="/usr/lib/mozilla/plugins"
