@@ -10,7 +10,7 @@ Version:        0.2.8.1
 Release:        9
 Epoch:		1
 Summary:	MS Silverlight alternative for linux
-URL:		http://pipelight.net
+URL:		https://pipelight.net
 Source0:	pipelight-%{version}.tar.bz2
 Source1:	pipelight-x64-%{version}.tar.bz2
 Source100:      pipelight.rpmlintrc
